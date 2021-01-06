@@ -11,11 +11,14 @@ with open_csv as f:
     header = next(bankreader)
 
     # Counting the # of dates in the the dataset
-    total = len(list(bankreader))
-    print(total)
+    #total = len(list(bankreader))
+    #print(total)
 
     # Find the net profits/losses for the entire set
     sums = 0
-    for row in csv.reader(f):
+    count = 0
+    for row in bankreader:
         sums = sums + float(row[1])
+        count += 1
     print(sums)
+    print(count)
